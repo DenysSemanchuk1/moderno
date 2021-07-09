@@ -9,7 +9,7 @@ let cssmin = require("gulp-cssmin");
 
 gulp.task("sass", function () {
   return gulp
-    .src("app/scss/main.scss")
+    .src("app/scss/**/*.scss")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(rename({ suffix: ".min" }))
     .pipe(
@@ -67,7 +67,7 @@ gulp.task("js", function () {
 });
 
 gulp.task("watch", function () {
-  gulp.watch("app/scss/main.scss", gulp.parallel("sass"));
+  gulp.watch("app/scss/**/*.scss", gulp.parallel("sass"));
   gulp.watch("app/*.html", gulp.parallel("html"));
   gulp.watch("app/js/*.js", gulp.parallel("js"));
 });
