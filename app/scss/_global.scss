@@ -1,11 +1,13 @@
 html {
   box-sizing: border-box;
 }
+
 *::before,
 *::after,
 * {
   box-sizing: inherit;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -13,22 +15,47 @@ body {
   font-size: 15px;
   color: $text;
 }
+
 h1 {
   margin: 0;
 }
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 1.5em;
+  margin-top: 0;
+}
+
 a {
   display: inline-block;
   color: $text;
   text-decoration: none;
 }
+
 ul,
 li {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
+
 .container {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.container-fluid {
+  padding: 0 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 720px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
 }
