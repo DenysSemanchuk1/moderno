@@ -61,19 +61,23 @@ li {
   }
 }
 @mixin f500 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
 @mixin f700 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
+}
+@mixin f300 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 .angle-right {
   padding-left: 15px;
   position: relative;
   &::before {
-    content: '\f105';
-    font-family: 'icomoon';
+    content: "\f105";
+    font-family: "icomoon";
     position: absolute;
     left: 0;
     top: -2px;
