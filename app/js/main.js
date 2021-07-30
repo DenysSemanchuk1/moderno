@@ -5,7 +5,7 @@ $(document).ready(function () {
     ratedFill: '#ffa726',
     starWidth: "12px",
   });
-  $('select').styler();
+  $('select, input[type="file"]').styler();
 
   $(".js-range-slider").ionRangeSlider({
     type: "double",
@@ -46,6 +46,4 @@ $(document).ready(function () {
   });
 
   var mixer = mixitup('.products__inner-box, .catalog__products');
-
-
 });

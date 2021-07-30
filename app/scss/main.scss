@@ -221,6 +221,7 @@
 
 .user-box {
   position: relative;
+  z-index: 1;
 }
 
 .header__btns {
@@ -231,7 +232,103 @@
   min-height: 530px;
   padding: 140px 0 100px;
 }
+#login {
+  background-color: $green;
+  color: #fff;
+  max-width: 730px;
+  width: 100%;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+.login__title {
+  @include f700;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.login__wrapper {
+  text-align: left !important;
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .login__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    &::before {
+      font-family: "icomoon";
+      position: absolute;
+      color: #fff;
+      font-size: 14px;
+      left: 18px;
+      top: 13px;
+    }
+  }
+  .login__label-name::before {
+    content: "\f007";
+  }
+  .login__label-pass::before {
+    content: "\f023";
+  }
+  input {
+    display: block;
+    height: 43px;
+    margin-bottom: 8px;
+    width: 100%;
+    border: none;
+    background-color: #76ae36;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 40px;
 
+    &::placeholder {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+  button {
+    margin-top: 19px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    @include f700;
+    color: #000;
+    text-align: center;
+    padding: 18px 0 16px;
+
+    border: none;
+    text-align: center;
+    width: 140px;
+    box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+  }
+}
+.login__link {
+  color: #fff;
+  background-color: #76ae36;
+  font-size: 18px;
+  width: 245px;
+  text-align: center;
+  padding: 15px 0 15px 28px;
+  position: relative;
+  &::before {
+    content: "\f044";
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    font-family: "icomoon";
+  }
+}
+.fancybox-button svg path {
+  color: #fff;
+  stroke-width: 3px;
+}
+.lost-pass {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+}
 .search__inner {
   color: #fff;
   text-align: center;
@@ -548,7 +645,10 @@ a.message__img {
 section.products {
   background-color: #f4f6f5;
   padding: 110px 0;
-
+  .mixitup-control-active {
+    background: $red !important;
+    color: #fff;
+  }
   h2.products__title {
   }
 
@@ -1399,6 +1499,41 @@ section.tutorial {
   padding-top: 35px;
   padding-bottom: 100px;
   background-color: #f4f6f5;
+  .jq-selectbox__select {
+    box-sizing: border-box;
+    height: 27px;
+    line-height: 27px;
+    padding: 0 10px;
+    padding-right: 25px;
+    border: 1px solid #d3d3d3;
+    border-bottom-color: #d3d3d3;
+    border-radius: 0px;
+    background: transparent;
+    box-shadow: none;
+    color: #70838d;
+    text-shadow: none;
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+  .jq-selectbox__trigger {
+    border-left: none;
+    width: auto;
+  }
+  .jq-selectbox__trigger-arrow {
+    display: none;
+  }
+  .jq-selectbox__trigger {
+    &::after {
+      content: "\f0d7";
+      font-family: "icomoon";
+      color: $green;
+      position: absolute;
+      right: 10px;
+      line-height: 27px;
+      font-size: 13px;
+    }
+  }
 }
 .product-one__images {
   max-width: 829px;
@@ -1845,7 +1980,7 @@ section.tutorial {
   padding-bottom: 20px;
   font-size: 20px;
   padding-left: 40px;
-  @include f500;
+  font-family: "Roboto", sans-serif !important;
   margin-bottom: 20px;
   &::after {
     content: "";
@@ -1858,6 +1993,7 @@ section.tutorial {
     left: 40px;
   }
   &::before {
+    font-family: "icomoon";
     color: $green;
     font-size: 24px;
     position: absolute;
@@ -1931,6 +2067,40 @@ section.tutorial {
   padding-top: 35px;
   padding-bottom: 150px;
   background-color: #f4f6f5;
+
+  .jq-selectbox__select {
+    padding: 0 45px 0 10px;
+    border: 1px solid #dedede;
+    border-bottom-color: #dedede;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    color: #707070;
+    text-shadow: none;
+    line-height: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+  }
+  .jq-selectbox {
+    width: 100%;
+  }
+  .jq-selectbox__trigger {
+    border-left: none;
+    &::after {
+      content: "\f0d7";
+      font-family: "icomoon";
+      color: #444444;
+      right: 20px;
+      position: absolute;
+      top: 0;
+      font-size: 15px;
+    }
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+  }
 }
 .product-one__tabs.settings__tabs {
   display: flex;
@@ -2010,14 +2180,7 @@ section.tutorial {
     background-color: #f9f9f9;
     border: 1px solid #dedede;
   }
-  .jqselect {
-    max-width: 540px;
-    width: 100%;
-    height: 40px;
-    color: #000;
-    background-color: #f9f9f9;
-    border: 1px solid #dedede;
-  }
+
   .jq-selectbox.focused .jq-selectbox__select {
     height: 40px;
   }
@@ -2026,3 +2189,498 @@ section.tutorial {
   }
 }
 //end settings
+.profile-status {
+  color: #707070;
+  font-size: 13px;
+  border: 1px solid #d6d6d6;
+  padding: 6px 9px 5px 30px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+}
+.profile {
+  padding-top: 35px;
+  background-color: #f4f6f5;
+}
+.profile__aside {
+  max-width: 270px;
+  width: 100%;
+  margin-right: 30px;
+}
+.profile-on {
+  &::before {
+    background-color: $green;
+  }
+}
+.profile-off {
+  &::before {
+    background-color: $red;
+  }
+}
+.profile__aside-btn {
+  margin-bottom: 13px;
+}
+
+.profile {
+}
+
+.profile__aside-message {
+  display: block;
+  width: 100%;
+  margin-bottom: 17px;
+  font-size: 16px;
+  color: #fff;
+  @include f500;
+  text-align: center;
+  box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+  background-color: #546e7a;
+  position: relative;
+  padding: 18px 10px;
+  &::before {
+    content: "\f003";
+    font-family: "icomoon";
+    position: absolute;
+    left: 50px;
+    top: 17px;
+  }
+}
+.profile__aside-following {
+  display: block;
+  width: 100%;
+  margin-bottom: 17px;
+  font-size: 16px;
+  color: #fff;
+  @include f500;
+  background-color: $green;
+  padding: 18px 10px;
+  text-align: center;
+  box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+}
+.aside__filter-item {
+  margin-bottom: 23px;
+}
+
+.profile__inner {
+  display: flex;
+  padding-bottom: 30px;
+}
+.profile__banner {
+  padding: 20px;
+  border: 1px solid #dedede;
+  background-color: #fff;
+  margin-bottom: 38px;
+}
+.profile__banner-images {
+  min-height: 332px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.profile__content {
+  width: 100%;
+}
+.profile__items {
+  display: flex;
+}
+.profile__item {
+  font-size: 14px;
+  width: 25%;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 5px 17px;
+  border: 1px solid #dedede;
+  & + .profile__item {
+    border-left: 1px solid #dedede;
+  }
+}
+.profile__item-title {
+  @include f500;
+}
+.profile__item-content {
+  color: #707070;
+  &.profile__item-sales {
+    color: $bg;
+    @include f500;
+  }
+}
+.profile-settings {
+}
+.personal-box {
+  background-color: #fff;
+  padding: 35px 40px 20px;
+  border: 1px solid #dedede;
+}
+
+.personal-box__title {
+  margin-bottom: 25px;
+  color: $bg;
+  font-size: 20px;
+  @include f700;
+}
+.personal-box__text {
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 20px;
+    color: #707070;
+  }
+}
+.personal-box__item-title {
+  font-size: 20px;
+  @include f700;
+  color: $bg;
+  margin-bottom: 20px;
+}
+.personal-box__item-head {
+  display: flex;
+  justify-content: space-between;
+}
+.personal-box__item-name {
+  @include f500;
+  font-size: 16px;
+  color: $bg;
+  font-style: italic;
+}
+.personal-box__item-num {
+  @include f700;
+  font-size: 16px;
+  color: $bg;
+}
+.personal-box__item-line {
+  height: 15px;
+  background-color: #f4f4f4;
+  border: 3px;
+  margin-bottom: 23px;
+  margin-top: 10px;
+  border-radius: 3px;
+  span {
+    display: block;
+    height: 15px;
+    background-color: $green;
+    border-radius: 3px;
+    background-image: url("../images/bar.png");
+    background-repeat: repeat;
+    overflow-x: hidden;
+  }
+}
+.product-one__tabs.settings__tabs {
+  .tabs {
+    .tab {
+      font-family: "Roboto", sans-serif !important;
+      position: relative;
+      &::before {
+        position: absolute;
+        left: 24px;
+        top: 25px;
+        font-family: "icomoon";
+        color: #d0d0d0;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.breadcrumbs--another {
+  padding-bottom: 35px;
+}
+
+// start upload
+
+.upload__inner {
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+}
+.upload__inner-title {
+  padding: 16px 35px 18px;
+  @include f500;
+  font-size: 24px;
+  color: $bg;
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 40px;
+}
+.upload__inner-content {
+  margin-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 50px;
+  button {
+    border: none;
+    background-color: $green;
+    color: #fff;
+    padding: 15px 36px;
+    @include f500;
+    margin-left: 175px;
+    cursor: pointer;
+  }
+}
+.upload-line {
+  margin-bottom: 25px;
+  display: flex;
+  label {
+    padding-top: 5px;
+    min-width: 175px;
+    padding-right: 15px;
+    color: #444;
+    &::placeholder {
+      color: #707070;
+    }
+  }
+  span {
+    color: $green;
+  }
+  select,
+  input,
+  textarea,
+  .jq-selectbox__select {
+    display: block;
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0 18px;
+  }
+  input[type="file"] {
+    outline: none;
+  }
+  .jq-selectbox.jqselect {
+    width: 100%;
+    display: block;
+  }
+  textarea {
+    height: 150px;
+    resize: none;
+    padding: 8px 18px;
+  }
+  .jq-file {
+    width: 100%;
+  }
+  .jq-selectbox__trigger {
+    border-left: none;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    color: #707070;
+    font-family: "Roboto", sans-serif;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    &::before {
+      content: "\f0d7";
+      position: absolute;
+      font-family: "icomoon";
+      font-size: 15px;
+      color: #444;
+      top: -3px;
+      line-height: 1;
+      right: 8px;
+    }
+  }
+  .jq-selectbox__dropdown {
+    top: 32px !important;
+  }
+  .jq-file {
+    border-radius: 0px;
+    box-shadow: none;
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #d7d7d7;
+  }
+  .jq-file__name {
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-bottom-color: transparent;
+    border-radius: 4px;
+    background: transparent;
+    box-shadow: none;
+    color: #707070;
+    font-size: 12px;
+    line-height: 40px;
+    margin-left: 112px;
+  }
+  .jq-file__browse {
+    outline: none;
+    cursor: pointer;
+    top: 5px;
+    font-size: 12px;
+    color: #444;
+    padding: 0 12px;
+    height: 26px;
+    line-height: 26px;
+    right: auto;
+    left: 9px;
+    border: 1px solid #d7d7d7;
+    border-left: 1px solid #d7d7d7;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+.upload {
+  padding-bottom: 130px;
+}
+// end upload
+// start withdrawals
+.withdrawals {
+  padding-bottom: 110px;
+}
+.withdrawals__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.withdrawals__col {
+  max-width: 570px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  height: 100%;
+}
+.withdrawals__title {
+  padding: 18px 32px 24px;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 30px;
+  color: $bg;
+  @include f500;
+  font-size: 24px;
+}
+.withdrawals__content {
+  padding-left: 35px;
+  padding-right: 40px;
+  button {
+    margin-bottom: 50px;
+    border: none;
+    background-color: $green;
+    color: #fff;
+    padding: 15px 36px;
+    @include f500;
+    cursor: pointer;
+  }
+}
+.withdrawals__form-line {
+  margin-bottom: 25px;
+  label {
+    display: block;
+    width: 100%;
+    @include f500;
+    font-size: 16px;
+    color: $bg;
+    margin-bottom: 15px;
+    span {
+      color: $green;
+    }
+  }
+  input {
+    width: 100%;
+  }
+  select {
+  }
+  .jq-selectbox__trigger {
+    border-left: none;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    color: #707070;
+    font-family: "Roboto", sans-serif;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    &::before {
+      content: "\f0d7";
+      position: absolute;
+      font-family: "icomoon";
+      font-size: 15px;
+      color: #444;
+      top: -3px;
+      line-height: 1;
+      right: 8px;
+    }
+  }
+  .jq-selectbox__dropdown {
+    top: 32px !important;
+  }
+  .jq-selectbox.jqselect {
+    width: 100%;
+    display: block;
+  }
+  input {
+    display: block;
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0 18px;
+  }
+}
+.withdrawals__content-items {
+  padding-bottom: 35px;
+}
+.withdrawals__content-item {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  &:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+}
+.withdrawals {
+  &__content-date {
+    font-size: 13px;
+    color: #444444;
+    @include f500;
+    width: 154px;
+    padding-left: 20px;
+  }
+
+  &__content-email {
+    width: 180px;
+    font-size: 13px;
+    color: #444;
+    @include f500;
+  }
+
+  &__content-price {
+    width: 70px;
+    color: #444444;
+    font-size: 13px;
+    @include f700;
+  }
+
+  &__content-status {
+    width: 88px;
+    @include f500;
+    font-size: 13px;
+    &.paid {
+      color: $green;
+    }
+    &.withdrawals__content-pending {
+      color: #444;
+    }
+  }
+
+  &__content-pending {
+  }
+}
+
+// end withdrawals
